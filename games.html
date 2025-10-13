@@ -777,8 +777,8 @@
   })();
 </script>
 <script>
-  // Configuration
-  const POPUP_DELAY = 2000; // Show popup after 2 seconds (in milliseconds)
+   // Configuration
+   const POPUP_DELAY = 2000; // Show popup after 2 seconds (in milliseconds)
     const POPUP_STORAGE_KEY = 'feedbackPopupShown';
 
     // Check if popup should be shown
@@ -811,22 +811,24 @@
       setTimeout(closePopup, 300);
     }
 
-    // Close popup when clicking outside
-    document.getElementById('feedbackPopup').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closePopup();
-      }
-    });
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      // Close popup when clicking outside
+      document.getElementById('feedbackPopup').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closePopup();
+        }
+      });
 
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closePopup();
-      }
-    });
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closePopup();
+        }
+      });
 
-    // Initialize - show popup on page load
-    showPopup();
+      // Show popup on page load
+      showPopup();
 </script>
 <!-- Auto Popup -->
   <div class="popup-overlay" id="feedbackPopup">
