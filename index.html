@@ -22,7 +22,7 @@
 
     gtag('config', 'G-TTZS202J2Q');
   </script>
-  <script>(function(s){s.dataset.zone='10294144',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  <script>(function (s) { s.dataset.zone = '10294144', s.src = 'https://gizokraijaw.net/vignette.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
   <meta name="description" content="The worlds best free and open source games website!" />
   <meta name="keywords"
@@ -33,8 +33,8 @@
   <meta property="og:url" content="https://spacecatgames.netlify.app" />
   <meta property="og:type" content="website" />
 
-    <script src="https://3nbf4.com/act/files/tag.min.js?z=10290270" data-cfasync="false" async></script>
-    <script>(function(s){s.dataset.zone='10290304',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  <script src="https://3nbf4.com/act/files/tag.min.js?z=10290270" data-cfasync="false" async></script>
+  <script>(function (s) { s.dataset.zone = '10290304', s.src = 'https://nap5k.com/tag.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 </head>
 
 <body class="dark-theme">
@@ -70,7 +70,7 @@
 
   <div class="hero">
     <div class="container">
-      <h1 id="main-header">Welcome to Space Cat Games 17 - Codename 64</h1>
+      <h1 id="main-header">Welcome to Space Cat Games 17.1 - Codename 64</h1>
       <div id="build-id" style="font-size:0.95em;color:#000000;margin-top:4px;"></div>
       <div id="random-tip" class="random-tip"></div>
       <script>
@@ -165,10 +165,10 @@
         function randomizeHeader() {
           const header = document.getElementById("main-header");
           if (Math.random() < 0.1) {
-            header.textContent = "スペースキャットゲーム バージョン17";
+            header.textContent = "スペースキャットゲーム バージョン17.1";
             console.log("Japanese header loaded.");
           } else {
-            header.textContent = "Welcome to Space Cat Games 17";
+            header.textContent = "Welcome to Space Cat Games 17.1";
             console.log("Standard header loaded.");
           }
         }
@@ -439,8 +439,19 @@
         header.textContent = "Space Cat Games: Developer's Edition.";
         header.style.color = "red";
       }
+
+      // Check if user has already dismissed the prompt
+      if (!localStorage.getItem('suppressOfficialSitePrompt')) {
+        var userChoice = confirm("You are viewing Space Cat Games on an unofficial or development URL.\n\nWould you like to visit the official site (spacecatgame.netlify.app)?\n\nClick OK to go to the official site.\nClick Cancel to stay here and not be asked again.");
+
+        if (userChoice) {
+          window.location.href = "https://spacecatgame.netlify.app";
+        } else {
+          localStorage.setItem('suppressOfficialSitePrompt', 'true');
+        }
+      }
     }
-    </script>
-<script src="js/type.js"></script>
+  </script>
+  <script src="js/type.js"></script>
 
 </html>

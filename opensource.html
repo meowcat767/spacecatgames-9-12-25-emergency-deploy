@@ -24,8 +24,8 @@
 
     gtag("config", "G-TTZS202J2Q");
   </script>
-    <script src="https://3nbf4.com/act/files/tag.min.js?z=10290270" data-cfasync="false" async></script>
-    <script>(function(s){s.dataset.zone='10290304',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  <script src="https://3nbf4.com/act/files/tag.min.js?z=10290270" data-cfasync="false" async></script>
+  <script>(function (s) { s.dataset.zone = '10290304', s.src = 'https://nap5k.com/tag.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
   </script>
 </head>
 
@@ -58,6 +58,11 @@
       </p>
 
       <p>You can view and download the source code from our repositories:</p>
+
+      <div id="github-stats" class="stats-container">
+        <p>Loading repository stats...</p>
+      </div>
+      <script src="js/github-stats.js"></script>
 
       <div class="cta-section">
         <a href="https://github.com/Ijichi-Systems/space-cat-games" class="btn">View Source on GitHub</a>
@@ -245,22 +250,22 @@
     FPS: --
   </div>
   <script>
-    (function () {
-      let lastFrame = performance.now();
-      let frames = 0;
-      let fps = 0;
-      function loop(now) {
-        frames++;
-        if (now - lastFrame >= 1000) {
-          fps = frames;
-          frames = 0;
-          lastFrame = now;
-          document.getElementById("fps-counter").textContent = "FPS: " + fps;
+      (function () {
+        let lastFrame = performance.now();
+        let frames = 0;
+        let fps = 0;
+        function loop(now) {
+          frames++;
+          if (now - lastFrame >= 1000) {
+            fps = frames;
+            frames = 0;
+            lastFrame = now;
+            document.getElementById("fps-counter").textContent = "FPS: " + fps;
+          }
+          requestAnimationFrame(loop);
         }
         requestAnimationFrame(loop);
-      }
-      requestAnimationFrame(loop);
-    })();
+      })();
   </script>
   <script src="js/themeswitcher.js"></script>
   <!-- Ezoic - sidebar_floating_2 - sidebar_floating_2 -->

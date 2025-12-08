@@ -1,138 +1,155 @@
 /* Game-specific styles */
-.game-categories {
+.game-controls {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   gap: 15px;
-  margin: 30px 0;
 }
 
-.category-btn {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: 500;
-}
-
-.category-btn:hover {
-  background-color: #8b1a1a;
-}
-
-.category-btn.active {
-  background-color: #e74c3c;
+.controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .search-container {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
 .search-input {
-  padding: 10px 15px;
   width: 100%;
-  max-width: 500px;
-  border: 2px solid #ddd;
-  border-radius: 30px;
+  padding: 12px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
   font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
 }
 
 .search-input:focus {
   border-color: #3498db;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.sort-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-select {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.random-btn {
+  background-color: #9b59b6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.random-btn:hover {
+  background-color: #8e44ad;
 }
 
 .game-count {
   text-align: center;
   color: #7f8c8d;
-  margin-bottom: 20px;
-}
-
-/* Sorting options */
-.sort-options {
-  margin: 15px 0;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.sort-select {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
-  outline: none;
-}
-
-.sort-select:focus {
-  border-color: #ff0000;
-}
-
-/* Game rating stars */
-.rating {
-  color: #f1c40f;
   font-size: 0.9rem;
-  margin-top: 5px;
 }
 
-/* Featured games section */
-.featured-game {
-  background-color: #f8f9fa;
+/* Highlight animation for random game */
+@keyframes highlightPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+  }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+  }
+}
+
+.highlight-game {
+  animation: highlightPulse 1s ease-in-out;
+  border: 2px solid #e74c3c;
   border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-@media (min-width: 768px) {
-  .featured-game {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
-
-.featured-game-image {
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 20px;
-}
-
-@media (min-width: 768px) {
-  .featured-game-image {
-    margin-right: 30px;
-    margin-bottom: 0;
-  }
-}
-
-.featured-game-details {
-  flex: 1;
-}
-
-.featured-game-details h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.featured-game-details p {
-  margin-bottom: 20px;
-}
-
-.featured-label {
+/* Back to Top Button */
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
   background-color: #e74c3c;
   color: white;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  display: inline-block;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+  background-color: #c0392b;
+  transform: translateY(-3px);
+}
+
+/* Dark Theme Support for new elements */
+body.dark-theme .game-controls {
+  background-color: #2c3e50;
+  color: white;
+}
+
+body.dark-theme .search-input {
+  background-color: #34495e;
+  border-color: #465c71;
+  color: white;
+}
+
+body.dark-theme .search-input:focus {
+  border-color: #3498db;
+  background-color: #2c3e50;
+}
+
+body.dark-theme .sort-select {
+  background-color: #34495e;
+  color: white;
+  border-color: #465c71;
+}
+
+body.dark-theme .game-count {
+  color: #bdc3c7;
 }
