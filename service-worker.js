@@ -29,7 +29,7 @@ self.addEventListener("activate", function (event) {
       return Promise.all(
         cacheNames.map(function (cacheName) {
           if (cacheName.indexOf(APP_NAME) === 0 && CACHE_NAME !== cacheName) {
-            return caches.delete(cacheName);
+            return caches.delete(cacheName); // make sure we guhh
           }
         })
       );
@@ -61,6 +61,8 @@ self.addEventListener("fetch", function (event) {
         // and because we want the browser to consume the response
         // as well as the cache consuming the response, we need
         // to clone it so we have two streams.
+
+        // bro didn't use /* the hell
         var responseToCache = response.clone();
 
         caches.open(CACHE_NAME).then(function (cache) {
